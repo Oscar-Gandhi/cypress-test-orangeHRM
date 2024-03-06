@@ -1,8 +1,34 @@
 [
   {
     "testName": "Login to orangeHRM as Admin and check the title of the page",
+    "validCred":"Yes",
     "userName": "Admin",
     "password": "admin123",
-    "title":"OrangeHRM"
+    "title":"OrangeHRM",
+    "count":"0"
+  },
+  {
+    "testName": "Login to OrangeHrm using invalid cred and check error message",
+    "validCred":"No",
+    "userName": "admin",
+    "password": "admin",
+    "errorMessage":"Invalid credentials",
+    "count":"1"
+  },
+  {
+    "testName": "Login to OrangeHrm using invalid cred and check error message",
+    "validCred":"No",
+    "userName": "Admin",
+    "password": "admin",
+    "errorMessage":"Invalid credentials",
+    "count":"2"
+  },
+  {
+    "testName": "Login to OrangeHrm using No cred and check error message",
+    "noCred":"Yes",
+    "userName": " ",
+    "password": " ",
+    "noCredText":"Required",
+    "count":"3"
   }
 ]

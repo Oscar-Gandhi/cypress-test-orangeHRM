@@ -8,6 +8,10 @@ class loginPageLocators{
         titleCheck:()=> cy.contains("OrangeHRM"),
         userAbout: ()=> cy.get("p.oxd-userdropdown-name"),
         logoutButton: ()=> cy.get("a[href='/web/index.php/auth/logout']"),
+        credErrorMessage: ()=> cy.contains("Invalid credentials"),
+        noCred:()=> cy.contains("Required"),
+        forgotPassword: ()=> cy.contains("Forgot your password? "),
+        resetPassButton: ()=> cy.get("button[type='submit']")
     }
 }
 
