@@ -23,11 +23,15 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+import loginPageLocators from "../locators/loginPageLocators"
 
+const elements = loginPageLocators.elements
 ///<reference types = "Cypress"/>
 
-Cypress.on('uncaught:exception', (err, runnable) => {
-    // By returning false here, we prevent Cypress from
-    // failing the test when uncaught exceptions occur.
-    return false;
-    })
+Cypress.Commands.add("loginToHRM",(username,password)=>{
+    //UserName Password and Click on Login Button
+    elements.userName().type(username)
+    elements.password().type(password)
+    elements.loginButton().click()
+
+})

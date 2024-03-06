@@ -20,3 +20,9 @@ import './commands'
 // require('./commands')
 
 /// <reference types = "cypress" />
+
+Cypress.on('uncaught:exception', (err, runnable) => {
+    // By returning false here, we prevent Cypress from
+    // failing the test when uncaught exceptions occur.
+    return false;
+    })
