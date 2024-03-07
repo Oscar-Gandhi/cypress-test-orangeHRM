@@ -1,10 +1,7 @@
 /// <reference types = "cypress" />
+import userManagementModules from "../modules/userManagementModules"
 describe("To test UserManagment Page",function(){
     before(()=>{
-        cy.fixture("crediantials.json").then(data=>{
-            this.username = data.username
-            this.password = data.password
-        })
         cy.fixture("userManagment.json").then(data=>{
             this.testdata = data
         })
@@ -14,6 +11,7 @@ describe("To test UserManagment Page",function(){
         cy.loginToHRM(this.username,this.password)
     })
     it("To test UserManagment",()=>{
-
+        const userData = this.testdata[0]
+        userManagementModules.createUser(userData)
     })
 })
