@@ -1,4 +1,13 @@
-
+describe("This is a autocompletion",function(){
+    before(()=>{
+        cy.fixture("userManagment.json").then((data)=>{
+            this.testdata = data
+        })
+    })
+    beforeEach(()=>{
+        cy.visit("")
+    })
+})
 it("To test the Autocompletion Feature of cypress",()=>{
     cy.visit("https://www.google.com/")
     cy.get("textarea[name='q']").type("cypress")
